@@ -22,6 +22,8 @@
 		B3EECC181976C77C00645D66 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EECBFC1976C77C00645D66 /* CoreData.framework */; };
 		B3EECC201976C77C00645D66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3EECC1E1976C77C00645D66 /* InfoPlist.strings */; };
 		B3EECC221976C77C00645D66 /* CoreAnimationAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EECC211976C77C00645D66 /* CoreAnimationAppTests.m */; };
+		B3EECC35197877D800645D66 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EECC33197877D800645D66 /* MainViewController.m */; };
+		B3EECC36197877D800645D66 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3EECC34197877D800645D66 /* MainViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		B3EECC1D1976C77C00645D66 /* CoreAnimationAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreAnimationAppTests-Info.plist"; sourceTree = "<group>"; };
 		B3EECC1F1976C77C00645D66 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B3EECC211976C77C00645D66 /* CoreAnimationAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreAnimationAppTests.m; sourceTree = "<group>"; };
+		B3EECC32197877D800645D66 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		B3EECC33197877D800645D66 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		B3EECC34197877D800645D66 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +125,9 @@
 				B3EECC0D1976C77C00645D66 /* Images.xcassets */,
 				B3EECC0A1976C77C00645D66 /* CoreAnimationApp.xcdatamodeld */,
 				B3EECBFF1976C77C00645D66 /* Supporting Files */,
+				B3EECC32197877D800645D66 /* MainViewController.h */,
+				B3EECC33197877D800645D66 /* MainViewController.m */,
+				B3EECC34197877D800645D66 /* MainViewController.xib */,
 			);
 			path = CoreAnimationApp;
 			sourceTree = "<group>";
@@ -229,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3EECC031976C77C00645D66 /* InfoPlist.strings in Resources */,
+				B3EECC36197877D800645D66 /* MainViewController.xib in Resources */,
 				B3EECC0E1976C77C00645D66 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +260,7 @@
 				B3EECC091976C77C00645D66 /* AppDelegate.m in Sources */,
 				B3EECC0C1976C77C00645D66 /* CoreAnimationApp.xcdatamodeld in Sources */,
 				B3EECC051976C77C00645D66 /* main.m in Sources */,
+				B3EECC35197877D800645D66 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +457,7 @@
 				B3EECC271976C77C00645D66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B3EECC281976C77C00645D66 /* Build configuration list for PBXNativeTarget "CoreAnimationAppTests" */ = {
 			isa = XCConfigurationList;
@@ -455,6 +466,7 @@
 				B3EECC2A1976C77C00645D66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
