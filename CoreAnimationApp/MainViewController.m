@@ -9,6 +9,10 @@
 #import "MainViewController.h"
 
 @interface MainViewController ()
+{
+    UIDynamicAnimator *_animator;
+}
+@property (nonatomic, strong) IBOutlet UIView *animView;
 
 @end
 
@@ -26,7 +30,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+    UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[_animView]];
+    [_animator addBehavior:gravity];
+    [gravity setGravityDirection:CGVectorMake(0.0, -1.0)];
+    [gravity setMagnitude:1.0];
 }
 
 - (void)didReceiveMemoryWarning
