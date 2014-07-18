@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3622BEA1978A18200EC9AAB /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3622BE91978A18200EC9AAB /* CoreImage.framework */; };
+		B3C81BC81979C1240096C67A /* blurView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C81BC71979C1240096C67A /* blurView.m */; };
+		B3C81BCA1979CABE0096C67A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C81BC91979CABE0096C67A /* OpenGLES.framework */; };
+		B3C81BCC1979D2FC0096C67A /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C81BCB1979D2FC0096C67A /* GLKit.framework */; };
 		B3EECBF71976C77C00645D66 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EECBF61976C77C00645D66 /* Foundation.framework */; };
 		B3EECBF91976C77C00645D66 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EECBF81976C77C00645D66 /* CoreGraphics.framework */; };
 		B3EECBFB1976C77C00645D66 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EECBFA1976C77C00645D66 /* UIKit.framework */; };
@@ -37,6 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B3622BE91978A18200EC9AAB /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		B3C81BC61979C1240096C67A /* blurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blurView.h; sourceTree = "<group>"; };
+		B3C81BC71979C1240096C67A /* blurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = blurView.m; sourceTree = "<group>"; };
+		B3C81BC91979CABE0096C67A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		B3C81BCB1979D2FC0096C67A /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		B3EECBF31976C77C00645D66 /* CoreAnimationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreAnimationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3EECBF61976C77C00645D66 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B3EECBF81976C77C00645D66 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -65,6 +74,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3C81BCC1979D2FC0096C67A /* GLKit.framework in Frameworks */,
+				B3C81BCA1979CABE0096C67A /* OpenGLES.framework in Frameworks */,
+				B3622BEA1978A18200EC9AAB /* CoreImage.framework in Frameworks */,
 				B3EECBF91976C77C00645D66 /* CoreGraphics.framework in Frameworks */,
 				B3EECBFD1976C77C00645D66 /* CoreData.framework in Frameworks */,
 				B3EECBFB1976C77C00645D66 /* UIKit.framework in Frameworks */,
@@ -108,6 +120,9 @@
 		B3EECBF51976C77C00645D66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B3C81BCB1979D2FC0096C67A /* GLKit.framework */,
+				B3C81BC91979CABE0096C67A /* OpenGLES.framework */,
+				B3622BE91978A18200EC9AAB /* CoreImage.framework */,
 				B3EECBF61976C77C00645D66 /* Foundation.framework */,
 				B3EECBF81976C77C00645D66 /* CoreGraphics.framework */,
 				B3EECBFA1976C77C00645D66 /* UIKit.framework */,
@@ -128,6 +143,8 @@
 				B3EECC32197877D800645D66 /* MainViewController.h */,
 				B3EECC33197877D800645D66 /* MainViewController.m */,
 				B3EECC34197877D800645D66 /* MainViewController.xib */,
+				B3C81BC61979C1240096C67A /* blurView.h */,
+				B3C81BC71979C1240096C67A /* blurView.m */,
 			);
 			path = CoreAnimationApp;
 			sourceTree = "<group>";
@@ -260,6 +277,7 @@
 				B3EECC091976C77C00645D66 /* AppDelegate.m in Sources */,
 				B3EECC0C1976C77C00645D66 /* CoreAnimationApp.xcdatamodeld in Sources */,
 				B3EECC051976C77C00645D66 /* main.m in Sources */,
+				B3C81BC81979C1240096C67A /* blurView.m in Sources */,
 				B3EECC35197877D800645D66 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

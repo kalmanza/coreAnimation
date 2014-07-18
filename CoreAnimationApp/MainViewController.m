@@ -7,8 +7,14 @@
 //
 
 #import "MainViewController.h"
+#import "blurView.h"
 
 @interface MainViewController ()
+{
+    EAGLContext *context;
+}
+@property (weak, nonatomic) IBOutlet blurView *filView;
+@property (nonatomic, strong) NSMutableArray *imgArray;
 
 @end
 
@@ -26,8 +32,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+    [self.filView setContext:context];
+    
+    self.filView.drawableColorFormat = GLKViewDrawableColorFormatRGBA8888;
+    self.filView.drawableDepthFormat = GLKViewDrawableDepthFormat24;
+    self.filView.drawableStencilFormat = GLKViewDrawableStencilFormat8;
+    
+    // Enable multisampling
+    self.filView.drawableMultisample = GLKViewDrawableMultisample4X;
 }
+
+- (void)timerFired:(id)something
+{
+    [self.view setNeedsDisplay];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
