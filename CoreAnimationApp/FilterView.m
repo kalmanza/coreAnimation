@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Kevin Almanza. All rights reserved.
 //
 
-#import "blurView.h"
+#import "FilterView.h"
 
-@interface blurView ()
+@interface FilterView ()
 {
     CIImage *inputImage;
     CIFilter *filter;
@@ -17,7 +17,7 @@
 }
 @end
 
-@implementation blurView
+@implementation FilterView
 
 - (id)initWithFrame:(CGRect)frame
 {

@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B3622BEA1978A18200EC9AAB /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3622BE91978A18200EC9AAB /* CoreImage.framework */; };
-		B3C81BC81979C1240096C67A /* blurView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C81BC71979C1240096C67A /* blurView.m */; };
+		B39FA010197ED661002E56B3 /* FilterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B39FA00F197ED661002E56B3 /* FilterTableViewController.m */; };
+		B3C81BC81979C1240096C67A /* FilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C81BC71979C1240096C67A /* FilterView.m */; };
 		B3C81BCA1979CABE0096C67A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C81BC91979CABE0096C67A /* OpenGLES.framework */; };
 		B3C81BCC1979D2FC0096C67A /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C81BCB1979D2FC0096C67A /* GLKit.framework */; };
 		B3EECBF71976C77C00645D66 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EECBF61976C77C00645D66 /* Foundation.framework */; };
@@ -26,8 +27,8 @@
 		B3EECC181976C77C00645D66 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EECBFC1976C77C00645D66 /* CoreData.framework */; };
 		B3EECC201976C77C00645D66 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3EECC1E1976C77C00645D66 /* InfoPlist.strings */; };
 		B3EECC221976C77C00645D66 /* CoreAnimationAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EECC211976C77C00645D66 /* CoreAnimationAppTests.m */; };
-		B3EECC35197877D800645D66 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EECC33197877D800645D66 /* MainViewController.m */; };
-		B3EECC36197877D800645D66 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3EECC34197877D800645D66 /* MainViewController.xib */; };
+		B3EECC35197877D800645D66 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EECC33197877D800645D66 /* FilterViewController.m */; };
+		B3EECC36197877D800645D66 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3EECC34197877D800645D66 /* FilterViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +43,10 @@
 
 /* Begin PBXFileReference section */
 		B3622BE91978A18200EC9AAB /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
-		B3C81BC61979C1240096C67A /* blurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blurView.h; sourceTree = "<group>"; };
-		B3C81BC71979C1240096C67A /* blurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = blurView.m; sourceTree = "<group>"; };
+		B39FA00E197ED661002E56B3 /* FilterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterTableViewController.h; sourceTree = "<group>"; };
+		B39FA00F197ED661002E56B3 /* FilterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterTableViewController.m; sourceTree = "<group>"; };
+		B3C81BC61979C1240096C67A /* FilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterView.h; sourceTree = "<group>"; };
+		B3C81BC71979C1240096C67A /* FilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterView.m; sourceTree = "<group>"; };
 		B3C81BC91979CABE0096C67A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		B3C81BCB1979D2FC0096C67A /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		B3EECBF31976C77C00645D66 /* CoreAnimationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreAnimationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,9 +67,9 @@
 		B3EECC1D1976C77C00645D66 /* CoreAnimationAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreAnimationAppTests-Info.plist"; sourceTree = "<group>"; };
 		B3EECC1F1976C77C00645D66 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B3EECC211976C77C00645D66 /* CoreAnimationAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreAnimationAppTests.m; sourceTree = "<group>"; };
-		B3EECC32197877D800645D66 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		B3EECC33197877D800645D66 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		B3EECC34197877D800645D66 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		B3EECC32197877D800645D66 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
+		B3EECC33197877D800645D66 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
+		B3EECC34197877D800645D66 /* FilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,11 +143,13 @@
 				B3EECC0D1976C77C00645D66 /* Images.xcassets */,
 				B3EECC0A1976C77C00645D66 /* CoreAnimationApp.xcdatamodeld */,
 				B3EECBFF1976C77C00645D66 /* Supporting Files */,
-				B3EECC32197877D800645D66 /* MainViewController.h */,
-				B3EECC33197877D800645D66 /* MainViewController.m */,
-				B3EECC34197877D800645D66 /* MainViewController.xib */,
-				B3C81BC61979C1240096C67A /* blurView.h */,
-				B3C81BC71979C1240096C67A /* blurView.m */,
+				B3EECC32197877D800645D66 /* FilterViewController.h */,
+				B3EECC33197877D800645D66 /* FilterViewController.m */,
+				B3EECC34197877D800645D66 /* FilterViewController.xib */,
+				B3C81BC61979C1240096C67A /* FilterView.h */,
+				B3C81BC71979C1240096C67A /* FilterView.m */,
+				B39FA00E197ED661002E56B3 /* FilterTableViewController.h */,
+				B39FA00F197ED661002E56B3 /* FilterTableViewController.m */,
 			);
 			path = CoreAnimationApp;
 			sourceTree = "<group>";
@@ -254,7 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3EECC031976C77C00645D66 /* InfoPlist.strings in Resources */,
-				B3EECC36197877D800645D66 /* MainViewController.xib in Resources */,
+				B3EECC36197877D800645D66 /* FilterViewController.xib in Resources */,
 				B3EECC0E1976C77C00645D66 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,8 +282,9 @@
 				B3EECC091976C77C00645D66 /* AppDelegate.m in Sources */,
 				B3EECC0C1976C77C00645D66 /* CoreAnimationApp.xcdatamodeld in Sources */,
 				B3EECC051976C77C00645D66 /* main.m in Sources */,
-				B3C81BC81979C1240096C67A /* blurView.m in Sources */,
-				B3EECC35197877D800645D66 /* MainViewController.m in Sources */,
+				B39FA010197ED661002E56B3 /* FilterTableViewController.m in Sources */,
+				B3C81BC81979C1240096C67A /* FilterView.m in Sources */,
+				B3EECC35197877D800645D66 /* FilterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

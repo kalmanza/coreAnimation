@@ -6,19 +6,19 @@
 //  Copyright (c) 2014 Kevin Almanza. All rights reserved.
 //
 
-#import "MainViewController.h"
-#import "blurView.h"
+#import "FilterViewController.h"
+#import "FilterView.h"
 
-@interface MainViewController ()
+@interface FilterViewController ()
 {
     EAGLContext *context;
 }
-@property (weak, nonatomic) IBOutlet blurView *filView;
+@property (weak, nonatomic) IBOutlet FilterView *filView;
 @property (nonatomic, strong) NSMutableArray *imgArray;
 
 @end
 
-@implementation MainViewController
+@implementation FilterViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
