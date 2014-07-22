@@ -9,5 +9,22 @@
 #import <UIKit/UIKit.h>
 #import <GLKit/GLKit.h>
 
+@protocol FilterViewDataSource <NSObject>
+
+- (CIFilter *)filterToDraw;
+
+@end
+
 @interface FilterView : GLKView
+
+@property (nonatomic, weak) id <FilterViewDataSource> dataSource;
+@property (nonatomic, strong) CIContext *_ciContext;
+@property (nonatomic, strong) EAGLContext *_eaglContext;
+
+- (void)setupFilter;
+
+- (void)startTimer;
+
+- (void)cleanup;
+
 @end

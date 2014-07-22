@@ -7,10 +7,14 @@
 //
 
 #import "FilterTableViewController.h"
+#import "FilterViewController.h"
 
 static NSString * const reuseID = @"reuseID";
 
 @interface FilterTableViewController ()
+{
+    NSArray *_filterNames;
+}
 
 @end
 
@@ -20,7 +24,7 @@ static NSString * const reuseID = @"reuseID";
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+        [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:reuseID];
     }
     return self;
 }
@@ -28,12 +32,17 @@ static NSString * const reuseID = @"reuseID";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self getFilterNames];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (void)getFilterNames
+{
+    _filterNames = [CIFilter filterNamesInCategories:nil]; // nil will return all filter names in all categories
 }
 
 #pragma mark - Table view data source
@@ -45,15 +54,24 @@ static NSString * const reuseID = @"reuseID";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return _filterNames.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseID forIndexPath:indexPath];
-    
+    NSString *filterName = _filterNames[indexPath.row];
+    filterName = [filterName stringByReplacingCharactersInRange:NSRangeFromString(@"0,2") withString:@""];
+    [cell.textLabel setText:filterName];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *filterName = _filterNames[indexPath.row];
+    FilterViewController *filterView = [[FilterViewController alloc] initWithFilterName:filterName];
+    [self.navigationController pushViewController:filterView animated:YES];
 }
 
 /*

@@ -12,8 +12,7 @@
 {
     CIImage *inputImage;
     CIFilter *filter;
-    CIContext *context;
-    CAEAGLLayer *ealayer;
+    NSTimer *timer;
 }
 @end
 
@@ -31,9 +30,19 @@
 - (void)awakeFromNib
 {
     inputImage = [CIImage imageWithCGImage:[UIImage imageNamed:@"toast"].CGImage];
-    NSTimer *timer;
+}
+
+- (void)setupFilter
+{
+    filter = [self.dataSource filterToDraw];
+    [filter setValue:inputImage forKey:kCIInputImageKey];
+}
+
+- (void)startTimer
+{
+    __weak FilterView *weakSelf = self;
     timer = [NSTimer scheduledTimerWithTimeInterval: 1.0/60.0
-                                             target: self
+                                             target: weakSelf
                                            selector: @selector(timerFired:)
                                            userInfo: nil
                                             repeats: YES];
@@ -41,31 +50,19 @@
                                  forMode: NSDefaultRunLoopMode];
     [[NSRunLoop currentRunLoop] addTimer: timer
                                  forMode: UITrackingRunLoopMode];
-    filter = [CIFilter filterWithName:@"CILightTunnel"];
-    [filter setValue:@0 forKey:kCIInputRadiusKey];
-    [filter setValue:inputImage forKey:kCIInputImageKey];
-    CIVector *center = [CIVector vectorWithCGPoint:CGPointMake(200, 200)];
-    [filter setValue:center forKey:kCIInputCenterKey];
 }
 
 - (void)timerFired:(id)something
 {
-    int radius = [[filter valueForKey:kCIInputRadiusKey] integerValue];
-    static BOOL increase = YES;
-    
-    if (increase) {
-        radius+=1;
-    } else {
-        radius-=1;
-    }
-    if (radius > 200) {
-        increase = NO;
-    }
-    if (radius < 2) {
-        increase = YES;
-    }
-    [filter setValue:[NSNumber numberWithInteger:radius] forKey:kCIInputRadiusKey];
     [self setNeedsDisplay];
+}
+
+- (void)cleanup
+{
+    [timer invalidate];
+    timer = nil;
+    inputImage = nil;
+    filter = nil;
 }
 
 // Only override drawRect: if you perform custom drawing.
@@ -73,10 +70,7 @@
 - (void)drawRect:(CGRect)rect
 {
     CGRect newrect = CGRectMake(0, 0, rect.size.width*2, rect.size.height*2);
-    if (!context) {
-        context = [CIContext contextWithEAGLContext:[EAGLContext currentContext]];
-    }
-    [context drawImage:[filter valueForKey:kCIOutputImageKey] inRect:newrect fromRect:newrect];
+    [__ciContext drawImage:[filter valueForKey:kCIOutputImageKey] inRect:newrect fromRect:inputImage.extent];
 }
 
 @end

@@ -18,7 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    FilterTableViewController *rootVC = [[FilterTableViewController alloc] init];
+    FilterTableViewController *rootVC = [[FilterTableViewController alloc] initWithStyle:UITableViewStylePlain];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:rootVC];
     [self.window setRootViewController:navController];
     self.window.backgroundColor = [UIColor whiteColor];

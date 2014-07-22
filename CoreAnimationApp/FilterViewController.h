@@ -10,4 +10,6 @@
 
 @interface FilterViewController : UIViewController
 
+- (id)initWithFilterName:(NSString *)filterName;
+
 @end

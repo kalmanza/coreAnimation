@@ -9,16 +9,25 @@
 #import "FilterViewController.h"
 #import "FilterView.h"
 
-@interface FilterViewController ()
+@interface FilterViewController () <FilterViewDataSource>
 {
-    EAGLContext *context;
+
 }
 @property (weak, nonatomic) IBOutlet FilterView *filView;
-@property (nonatomic, strong) NSMutableArray *imgArray;
+@property (nonatomic, copy) NSString *filterName;
 
 @end
 
 @implementation FilterViewController
+
+- (id)initWithFilterName:(NSString *)filterName
+{
+    self = [super initWithNibName:nil bundle:nil];
+    if (self) {
+        _filterName = filterName;
+    }
+    return self;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,27 +41,37 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-    [self.filView setContext:context];
-    
+    [self setEdgesForExtendedLayout:UIRectEdgeNone];
+    [self setTitle:self.filterName];
+    [_filView setDataSource:self];
+    _filView._eaglContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+    [_filView setContext:_filView._eaglContext];
     self.filView.drawableColorFormat = GLKViewDrawableColorFormatRGBA8888;
     self.filView.drawableDepthFormat = GLKViewDrawableDepthFormat24;
     self.filView.drawableStencilFormat = GLKViewDrawableStencilFormat8;
-    
+
     // Enable multisampling
     self.filView.drawableMultisample = GLKViewDrawableMultisample4X;
+    _filView._ciContext = [CIContext contextWithEAGLContext:_filView._eaglContext];
+    [_filView setupFilter];
+    [_filView startTimer];
 }
-
-- (void)timerFired:(id)something
-{
-    [self.view setNeedsDisplay];
-}
-
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (CIFilter *)filterToDraw
+{
+    return [CIFilter filterWithName:self.filterName];
+}
+
+- (void)dealloc
+{
+    [_filView cleanup];
+    _filView = nil;
 }
 
 @end
