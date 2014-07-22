@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="5056"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterViewController">
             <connections>
                 <outlet property="filView" destination="lwp-Q8-wsR" id="aTG-mP-afC"/>
+                <outlet property="tableView" destination="5t7-8B-8G9" id="YiY-cB-Hbo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,10 +24,23 @@
                         <constraint firstAttribute="height" constant="264" id="MWo-Z7-Hfw"/>
                     </constraints>
                 </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5t7-8B-8G9">
+                    <rect key="frame" x="0.0" y="264" width="320" height="240"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="VrZ-yr-8kh"/>
+                        <outlet property="delegate" destination="-1" id="Vb9-ut-SfV"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="5t7-8B-8G9" firstAttribute="top" secondItem="lwp-Q8-wsR" secondAttribute="bottom" id="09Z-sS-F6M"/>
+                <constraint firstAttribute="bottom" secondItem="5t7-8B-8G9" secondAttribute="bottom" id="Eil-Jb-hl2"/>
+                <constraint firstItem="5t7-8B-8G9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="GVU-Zd-USe"/>
                 <constraint firstItem="lwp-Q8-wsR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="LkB-2U-XRy"/>
+                <constraint firstAttribute="trailing" secondItem="5t7-8B-8G9" secondAttribute="trailing" id="UPR-RT-xSy"/>
                 <constraint firstAttribute="trailing" secondItem="lwp-Q8-wsR" secondAttribute="trailing" id="nSU-fC-A50"/>
                 <constraint firstItem="lwp-Q8-wsR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="znJ-D3-saA"/>
             </constraints>

@@ -40,16 +40,16 @@
 
 - (void)startTimer
 {
-    __weak FilterView *weakSelf = self;
-    timer = [NSTimer scheduledTimerWithTimeInterval: 1.0/60.0
-                                             target: weakSelf
-                                           selector: @selector(timerFired:)
-                                           userInfo: nil
-                                            repeats: YES];
-    [[NSRunLoop currentRunLoop] addTimer: timer
-                                 forMode: NSDefaultRunLoopMode];
-    [[NSRunLoop currentRunLoop] addTimer: timer
-                                 forMode: UITrackingRunLoopMode];
+//    __weak FilterView *weakSelf = self;
+//    timer = [NSTimer scheduledTimerWithTimeInterval: 1.0/60.0
+//                                             target: weakSelf
+//                                           selector: @selector(timerFired:)
+//                                           userInfo: nil
+//                                            repeats: YES];
+//    [[NSRunLoop currentRunLoop] addTimer: timer
+//                                 forMode: NSDefaultRunLoopMode];
+//    [[NSRunLoop currentRunLoop] addTimer: timer
+//                                 forMode: UITrackingRunLoopMode];
 }
 
 - (void)timerFired:(id)something
