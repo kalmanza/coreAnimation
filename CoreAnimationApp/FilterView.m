@@ -29,13 +29,15 @@
 
 - (void)awakeFromNib
 {
-    inputImage = [CIImage imageWithCGImage:[UIImage imageNamed:@"toast"].CGImage];
+    
 }
 
 - (void)setupFilter
 {
     filter = [self.dataSource filterToDraw];
-    [filter setValue:inputImage forKey:kCIInputImageKey];
+    if ([filter.inputKeys containsObject:kCIInputImageKey]) {
+        inputImage = [filter valueForKey:kCIInputImageKey];
+    }
 }
 
 - (void)startTimer
